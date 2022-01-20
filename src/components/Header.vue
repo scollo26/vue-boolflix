@@ -19,7 +19,8 @@ export default {
     data() {
         return {
             inputValue: "",
-            film: [], 
+            film: [],
+            serieTv:[], 
         }
     },
     methods: {

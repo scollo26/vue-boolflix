@@ -12,7 +12,7 @@
                   <div>{{movie.original_title}}</div>
                   <div>{{movie.original_language}}</div>
                   <div>{{movie.release_date}}</div>
-                  
+                  <div><i :class="(movie.original_language == 'en') ? 'flag flag-us' : `flag flag-${ movie.original_language }`"></i></div>
                   </li>
               </ul>
           </div>
