@@ -4,7 +4,7 @@
         <div class="col-4">
             <ul>
                   <li
-                  v-for="(movie,index) in searchMovie" 
+                  v-for="(movie,index) in searchMovie.films" 
                   :key="index"
                   >
                   <!-- <div>{{movie.poster_path}}</div> -->
@@ -25,17 +25,10 @@
 export default {
     name:"Main",
 
-    props: {
-      searchMovie: {
-        // searchMovie: String,
-        type: Array,
-        default() {
-          return [];
-        },
-
-      },
+    props:['searchMovie'],
+  
       
-    },
+  
 
     data() {
         return {         

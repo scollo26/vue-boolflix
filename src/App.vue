@@ -16,7 +16,10 @@ export default {
   name: "App",
   data() {
     return {
-      arrayMovie: ""
+      arrayMovie: {
+        films:[],
+        series:[],
+      },
     }
   },
   components: {
@@ -25,8 +28,10 @@ export default {
   },
   methods: {
     Select(value) {
-      this.arrayMovie = value
-      console.log(this.arrayMovie)
+      this.arrayMovie.films = value.Movies;
+      this.arrayMovie.series = value.Tv;
+      console.log(this.arrayMovie.films);
+      // console.log(this.arrayMovie.series)
     }
   },
 };
