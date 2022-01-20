@@ -1,10 +1,12 @@
 <template>
-  <div class="container-fluid">
-      <div class="row justify-content-end">
-        <div class="col-3">
-            
+  <div class="container-100">
+      <div class="container ">
+        <div class="row">
+            <div class="col">
               <input @keyup.enter="getSearch" v-model="inputValue" type="text">
               <button @click="getSearch">INVIA</button>
+            </div>
+              
           </div>
       </div>
   </div>
@@ -80,6 +82,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.container-100 {
+	width: 100%;
+	// margin: auto;
+    background-color: burlywood;
+    .row{
+        width: 100%;
+        margin: 0 auto;
+    }
+  input{
+    width: 20%;
+    
+  }
+  button{
+      width: 20%;
+    }
+}
 
 </style>

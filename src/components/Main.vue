@@ -1,43 +1,168 @@
 <template>
-  <div class="container">
-      <div class="row">
-        <div class="col-4">
-            <ul>
-                  <li
+  <div class="container-fluid-main">
+      <div class="row ">
+        <div class="col ">
+          <div class="film" >
+              <Card v-for=" (movie,index) in searchMovie.films" :key="index + 'films'"
+              :title="movie.title" 
+			        :original="movie.original_title" 
+			        :lang="movie.original_language"
+			        :vote="movie.vote_average"
+			        :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`">
+              
+              
+              
+              </Card>
+              <Card v-for=" (movie,index) in searchMovie.series" :key="index + 'series'"
+              :title="movie.name" 
+			        :original="movie.original_name" 
+			        :lang="movie.original_language"
+			        :vote="movie.vote_average"
+			        :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"> 
+              </Card>
+          </div>
+        </div>
+      </div>
+  </div>  
+
+              <!-- <h2>Film trovati</h2>
+                <li
                   v-for="(movie,index) in searchMovie.films" 
-                  :key="index"
+                  :key="index "
                   >
-                  <!-- <div>{{movie.poster_path}}</div> -->
+                  
+                  <img class="img-fluid "
+                    :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
+                    :alt="movie.title">
+
                   <div>{{movie.title}}</div>
                   <div>{{movie.original_title}}</div>
                   <div>{{movie.original_language}}</div>
                   <div>{{movie.release_date}}</div>
-                  <div><i :class="(movie.original_language == 'en') ? 'flag flag-us' : `flag flag-${ movie.original_language }`"></i></div>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
+                  <div><i :class="'flag flag-' + getFlags(movie.original_language)"></i>
+                  <div>voto: {{transfNum(movie.vote_average)}}</div>
+                  
+                  </div>
+                  </li> -->
+          <!-- <div class="serie">
+                  <ul v-if="searchMovie.series.length > 0">
+                    <h2>Serie tv trovate</h2>
+                    <li
+                    v-for="(serie,index) in searchMovie.series" 
+                    :key="index"
+                    >
+                    
+                      <img class="img-fluid "
+                    :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
+                    :alt="serie.title">
+
+                    <div>{{serie.name}}</div>
+                    <div>{{serie.original_name}}</div>
+                    <div>{{serie.original_language}}</div>
+                    <div>{{serie.release_date}}</div>
+                    <div><i :class="'flag flag-' + getFlags(serie.original_language)"></i></div>
+                    <div>voto: {{transfNum(serie.vote_average)}}</div>
+                    </li>
+                  </ul>
+                  <h2 v-else>nessuna serie trovato</h2>
+          </div> -->
+    
 </template>
 
 <script>
-
+import Card from './Card.vue'
 export default {
     name:"Main",
+    components:{
+      Card,
+    },
 
     props:['searchMovie'],
-  
-      
-  
-
     data() {
         return {         
         }
     },
+     methods: {
+      //   getFlags(value){
+      //       switch (value){
+      //           case 'en':
+      //               return 'uk';
+      //           case 'ko':
+      //               return 'kr';
+      //           case 'ja':
+      //               return 'jp';
+      //           case 'ur':
+      //               return 'pk';
+      //           case 'zh':
+      //               return 'cn';
+      //           default:
+      //               return value;
+      //       }
+      //   },
+      // transfNum(num){
+      //   const numberStar = num / 2;
+      //   return numberStar.toFixed(0)
+      // }
+    }
+    
 
 }
 </script>
 
-<style>
+<style lang="scss" >
+.container-fluid-main{
+  background-color: black;
+  width: 100%;
+  .row{
+    width: 100%;
+    .col{
+      display: flex;
+      flex-direction: column;
+        width: 100%;
+  
+      .film{
+        background-color: brown;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    height: 100%;
+		    img {
+			  width: 100%;
+		    }
+      }
+  
+  
+  ul{
+    list-style: none;
+    margin: 0;
+      li{
+        display: inline-block;
+        border: 2px solid black;
+        padding: 3em;
+      }
+  }
+  }
+  
+   .serie{
+    background-color: chocolate;
+    img{
+    width: 50%;
+    
+  }
+    ul{
+    list-style: none;
+    margin: 0;
+      li{
+        display: inline-block;
+        border: 2px solid black;
+        padding: 2em;
+        
+      }
+    }
+  }
+  
+}
+}
+
 
 </style>
