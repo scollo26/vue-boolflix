@@ -32,6 +32,7 @@ export default {
             })
             .then(result => {
               this.film = result.data.results;
+              console.log(this.film);
               this.$emit("doSearch", this.film);
               
             })

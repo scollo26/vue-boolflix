@@ -11,9 +11,7 @@
                   <div>{{movie.title}}</div>
                   <div>{{movie.original_title}}</div>
                   <div>{{movie.original_language}}</div>
-                  <div>
-                      {{movie.release_date}}
-                  </div>
+                  <div>{{movie.release_date}}</div>
                   
                   </li>
               </ul>
@@ -28,7 +26,15 @@ export default {
     name:"Main",
 
     props: {
-      searchMovie: String,
+      searchMovie: {
+        // searchMovie: String,
+        type: Array,
+        default() {
+          return [];
+        },
+
+      },
+      
     },
 
     data() {

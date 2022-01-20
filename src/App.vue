@@ -19,19 +19,20 @@ export default {
       arrayMovie: ""
     }
   },
+  components: {
+    Header,
+    Main,
+  },
   methods: {
     Select(value) {
       this.arrayMovie = value
       console.log(this.arrayMovie)
     }
   },
-  components: {
-    Header,
-    Main,
-  },
 };
 </script>
 
 <style lang="scss">
   @import "~bootstrap/scss/bootstrap";
+  @import '~mdb-ui-kit/css/mdb.min.css';
 </style>
