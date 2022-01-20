@@ -106,42 +106,10 @@ export default {
 		    flex-direction: column;
 		    align-items: center;
 		    height: 100%;
-		    img {
-			    width: 100%;
-		    }
-      }
-  
-  
-  ul{
-    list-style: none;
-    margin: 0;
-      li{
-        display: inline-block;
-        border: 2px solid black;
-        padding: 3em;
-      }
-  }
-  }
-  
-  .serie{
-    background-color: chocolate;
-    img{
-    width: 50%;
-    
-  }
-    ul{
-    list-style: none;
-    margin: 0;
-      li{
-        display: inline-block;
-        border: 2px solid black;
-        padding: 2em;
-        
-        }
-      }
+		    
     }
   }
 }
-
+}
 
 </style>

@@ -1,7 +1,7 @@
 <template>
 <ul>
     <li>          
-        <img class="img-fluid "
+        <img class="img "
             :src="image"
             :alt="title">
         <div>{{title}}</div> 
@@ -56,6 +56,27 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" >
+
+  
+  
+  ul{
+      display: inline-block;
+    list-style: none;
+    margin: 0;
+      li{
+        
+        border: 2px solid black;
+        padding: 3em;
+        width: 50%;
+        img{
+            width: 100%;
+        }
+      }
+  }
+  
+  
+
+
 
 </style>
