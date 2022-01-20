@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-   <Header 
-   @sendSelect="Select($event)"
-   />
-   <Main 
-   
-   />
+    <Header 
+      @doSearch="Select($event)"
+    />
+    <Main 
+      :searchMovie="arrayMovie"
+    />
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
   methods: {
     Select(value) {
       this.arrayMovie = value
+      console.log(this.arrayMovie)
     }
   },
   components: {

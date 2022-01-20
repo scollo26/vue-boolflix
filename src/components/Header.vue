@@ -24,21 +24,21 @@ export default {
     },
     methods: {
       getCards: function () {
-           axios.get("https://api.themoviedb.org/3/search/movie?api_key=fff1015477ee19b28debc8335af449d5",
+          axios.get("https://api.themoviedb.org/3/search/movie?api_key=fff1015477ee19b28debc8335af449d5",
             {
                 params: {
                     query: this.inputValue
                 }
             })
-           .then(result => {
-               this.film = result.data.results
-                this.$emit("sendSelect", this.film)
+            .then(result => {
+              this.film = result.data.results;
+              this.$emit("doSearch", this.film);
               
-           })
-           .catch(err => {
-               console.error(err);               
-           })
-       }
+            })
+            .catch(err => {
+              console.error(err);               
+            })
+      }
     },
 }
 </script>

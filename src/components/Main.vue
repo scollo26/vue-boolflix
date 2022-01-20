@@ -3,8 +3,17 @@
       <div class="row">
         <div class="col-4">
             <ul>
-                  <li>
-                 
+                  <li
+                  v-for="(movie,index) in searchMovie" 
+                  :key="index"
+                  >
+                  <!-- <div>{{movie.poster_path}}</div> -->
+                  <div>{{movie.title}}</div>
+                  <div>{{movie.original_title}}</div>
+                  <div>{{movie.original_language}}</div>
+                  <div>
+                      {{movie.release_date}}
+                  </div>
                   
                   </li>
               </ul>
@@ -18,7 +27,9 @@
 export default {
     name:"Main",
 
-    
+    props: {
+      searchMovie: String,
+    },
 
     data() {
         return {         
