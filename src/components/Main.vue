@@ -62,7 +62,7 @@ export default {
         return {         
         }
     },
-     methods: {
+    methods: {
       //   getFlags(value){
       //       switch (value){
       //           case 'en':
@@ -98,16 +98,16 @@ export default {
     .col{
       display: flex;
       flex-direction: column;
-        width: 100%;
+      width: 100%;
   
       .film{
         background-color: brown;
-		    display: flex;
+	      display: flex;
 		    flex-direction: column;
 		    align-items: center;
 		    height: 100%;
 		    img {
-			  width: 100%;
+			    width: 100%;
 		    }
       }
   
@@ -123,7 +123,7 @@ export default {
   }
   }
   
-   .serie{
+  .serie{
     background-color: chocolate;
     img{
     width: 50%;
@@ -137,11 +137,10 @@ export default {
         border: 2px solid black;
         padding: 2em;
         
+        }
       }
     }
   }
-  
-}
 }
 
 

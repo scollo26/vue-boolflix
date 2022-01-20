@@ -6,10 +6,11 @@
             :alt="title">
         <div>{{title}}</div> 
         <div>{{original}}</div>
-        <div><i :class="'flag flag-' + getFlags(lang)"></i>
+        <div>
+            <i :class="'flag flag-' + getFlags(lang)">  
+            </i>
         </div>
-        <div>{{transfNum(vote)}}</div>   
-        
+        <div>{{transfNum(vote)}}</div>    
     </li>
 </ul>
 </template>
