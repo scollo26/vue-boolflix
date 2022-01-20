@@ -1,7 +1,5 @@
 <template>
 <ul>
-
-    
     <li>          
         <img class="img-fluid "
             :src="image"

@@ -23,27 +23,7 @@
           </div>
         </div>
       </div>
-  </div>  
-
-              <!-- <h2>Film trovati</h2>
-                <li
-                  v-for="(movie,index) in searchMovie.films" 
-                  :key="index "
-                  >
-                  
-                  <img class="img-fluid "
-                    :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
-                    :alt="movie.title">
-
-                  <div>{{movie.title}}</div>
-                  <div>{{movie.original_title}}</div>
-                  <div>{{movie.original_language}}</div>
-                  <div>{{movie.release_date}}</div>
-                  <div><i :class="'flag flag-' + getFlags(movie.original_language)"></i>
-                  <div>voto: {{transfNum(movie.vote_average)}}</div>
-                  
-                  </div>
-                  </li> -->
+  </div> 
           <!-- <div class="serie">
                   <ul v-if="searchMovie.series.length > 0">
                     <h2>Serie tv trovate</h2>
