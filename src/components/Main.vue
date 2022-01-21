@@ -2,24 +2,36 @@
   <div class="container-fluid-main">
       <div class="row ">
         <div class="col ">
-          <div class="film" >
-              <Card v-for=" (movie,index) in searchMovie.films" :key="index + 'films'"
+          <div class="film"  >
+            <div v-if="searchMovie.films.length > 0">
+              <Card v-for=" (movie,index) in searchMovie.films" :key="index + movie.id"
               :title="movie.title" 
 			        :original="movie.original_title" 
 			        :lang="movie.original_language"
 			        :vote="movie.vote_average"
-			        :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`">
-              
-              
+			        :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
+              :noPhoto="movie.poster_path">
               
               </Card>
-              <Card v-for=" (movie,index) in searchMovie.series" :key="index + 'series'"
-              :title="movie.name" 
-			        :original="movie.original_name" 
-			        :lang="movie.original_language"
-			        :vote="movie.vote_average"
-			        :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"> 
-              </Card>
+             </div >
+             <h3 v-else> no film</h3>
+                
+              <h2>serie tv</h2>
+              <div class="film">
+                <div v-if="searchMovie.series.length > 0">
+                  <Card v-for=" (movie,index) in searchMovie.series" :key="index + movie.id"
+                  :title="movie.name" 
+			            :original="movie.original_name" 
+			            :lang="movie.original_language"
+			            :vote="movie.vote_average"
+			            :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"> 
+                </Card>
+
+                </div>
+                <h3 v-else> no serie tv</h3>
+              
+                
+              </div>
           </div>
         </div>
       </div>
@@ -107,9 +119,9 @@ export default {
 		    align-items: center;
 		    height: 100%;
 		    
+      }
     }
   }
-}
 }
 
 </style>
