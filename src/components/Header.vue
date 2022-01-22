@@ -1,14 +1,19 @@
 <template>
   <div class="container-100">
-      <div class="container ">
+      <!-- <div class="container "> -->
         <div class="row">
-            <div class="col">
+            <div class="col d-flex align-items-center">
+              <img src="../assets/img/logo.png" alt="">
+            </div>
+            <div class="col d-flex justify-content-end align-items-center">
               <input @keyup.enter="getSearch" v-model="inputValue" type="text">
               <button @click="getSearch">INVIA</button>
-            </div>
+            </div>  
+              
+            
               
           </div>
-      </div>
+      <!-- </div> -->
   </div>
 </template>
 
@@ -86,7 +91,7 @@ export default {
 .container-100 {
 	width: 100%;
 	// margin: auto;
-    background-color: burlywood;
+    background-color: black;
     .row{
         width: 100%;
         margin: 0 auto;
