@@ -1,7 +1,8 @@
 <template>
   <div class="container-fluid-main ">
     <div class="row row-cols-5">
-      <div class="film " v-if="searchMovie.films.length > 0">
+      <!-- Card-film -->
+      <div class="film-serie" v-if="searchMovie.films.length > 0">
         <div class="text"><h2>Film</h2></div>
         <Card v-for=" (movie,index) in searchMovie.films" :key="index +   movie.id"
           :title="movie.title" 
@@ -16,8 +17,8 @@
       <h3 v-else> No film</h3>
                 
       
-              
-      <div class="film" v-if="searchMovie.series.length > 0">
+      <!-- Card-serie-tv        -->
+      <div class="film-serie" v-if="searchMovie.series.length > 0">
         <div class="text"><h2>Serie tv</h2></div>
         
         <Card v-for=" (movie,index) in searchMovie.series" :key="index + movie.id"
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+// import figlio Card
 import Card from './Card.vue'
 export default {
     name:"Main",
@@ -81,9 +83,9 @@ export default {
   width: 100%;
   .row{
     // width: 100%;
-     width: 70%;
-      margin: 0 auto;
-    .film{
+    width: 70%;
+    margin: 0 auto;
+    .film-serie{
       display: flex;
       flex-wrap: wrap;
       width: 100%;

@@ -6,8 +6,9 @@
               <img src="../assets/img/logo.png" alt="">
             </div>
             <div class="col d-flex justify-content-end align-items-center">
-              <input @keyup.enter="getSearch" v-model="inputValue" type="text">
-              <button @click="getSearch">INVIA</button>
+              <!-- input e bottone che richiamano la funzione ricerca -->
+              <input @keyup.enter="getSearch()" v-model="inputValue" type="text">
+              <button @click="getSearch()">INVIA</button>
             </div>  
               
             
